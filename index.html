@@ -390,12 +390,17 @@
   .plan .btn{margin-top:10px;}
 
   /* NO SOLO */
+  .notesolo{padding:36px 0;}
+  @media(min-width:760px){
+    .notesolo{padding:56px 0;}
+  }
   .acompana{
     display:grid;gap:44px;
   }
   @media(min-width:900px){.acompana{grid-template-columns:1fr 1fr;align-items:start;}}
-  .acompana h2{font-size:clamp(26px,3.6vw,38px);max-width:16ch;}
-  .acompana-body{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:50ch;}
+  .acompana > div:first-child{text-align:center;}
+  .acompana h2{font-size:clamp(26px,3.6vw,38px);max-width:16ch;margin:0 auto;}
+  .acompana-body{margin:18px auto 0;font-size:16.5px;color:var(--ink-soft);max-width:50ch;}
   .acompana-body p+p{margin-top:12px;}
   .preguntas-box{
     background:var(--ink);
@@ -842,7 +847,7 @@
         </details>
         <details>
           <summary>¿La capacitación garantiza que voy a conseguir clientes?</summary>
-          <p>No. Te doy las herramientas, el conocimiento y el acompañamiento para avanzar, pero no puedo garantizar resultados económicos.</p>
+          <p>No. Te doy las herramientas, el conocimiento y el acompañamiento para avanzar, pero no puedo garantizar resultados económicos. Además, también va a depender del tiempo y el esfuerzo que le dediques a tu proyecto.</p>
         </details>
         <details>
           <summary>¿Puedo elegir otra habilidad más adelante?</summary>
