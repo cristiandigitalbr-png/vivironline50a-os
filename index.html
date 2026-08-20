@@ -152,12 +152,14 @@
 
   /* HERO */
   .hero{
-    padding:64px 0 70px;
+    padding:56px 0;
     position:relative;
     overflow:hidden;
-    min-height:calc(100svh - 73px);
     display:flex;
     align-items:center;
+  }
+  @media(min-width:760px){
+    .hero{min-height:calc(100svh - 73px);}
   }
   .hero .wrap{width:100%;}
   .hero-grid{
