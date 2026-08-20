@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivir Online a los 50 | Aprendé una habilidad digital y empezá tu camino</title>
+<meta name="description" content="Capacitación individual y acompañamiento práctico para mayores de 35 que quieren empezar a trabajar por Internet. Elegí una habilidad digital, aprendé de forma práctica y avanzá con acompañamiento real de 60 días.">
+<meta property="og:title" content="Vivir Online a los 50">
+<meta property="og:description" content="No necesitás saberlo todo. Necesitás empezar por algo. Capacitación práctica en habilidades digitales para mayores de 35.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F4EF;
+    --bg-card:#FFFFFF;
+    --bg-alt:#ECEEE7;
+    --ink:#12191C;
+    --ink-soft:#4B5450;
+    --ink-faint:#818B85;
+    --accent:#0F6E63;
+    --accent-dark:#0A4B43;
+    --accent-tint:#DEEBE7;
+    --warm:#B9702E;
+    --warm-tint:#F2E3D3;
+    --line:#DBDED4;
+    --radius-lg:22px;
+    --radius-md:14px;
+    --radius-sm:8px;
+    --shadow:0 10px 30px -14px rgba(18,25,28,0.18);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk',system-ui,sans-serif;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent-dark);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;border-radius:50%;
+    background:var(--accent);
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.02em;
+    padding:16px 28px;
+    border-radius:999px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(15,110,99,0.55);}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line);}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px);}
+  .btn-warm{background:var(--warm);color:#fff;}
+  .btn-warm:hover{background:#9C5D24;transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(185,112,46,0.5);}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(243,244,239,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:16px;padding-bottom:16px;
+  }
+  .logo{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:16.5px;
+    line-height:1.1;
+  }
+  .logo span{display:block;color:var(--accent);font-size:12px;font-weight:600;letter-spacing:0.08em;}
+  .nav-links{
+    display:none;
+    align-items:center;
+    gap:34px;
+    font-size:14.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{display:none;}
+  .hamburger{
+    display:flex;flex-direction:column;gap:5px;
+    background:none;border:none;cursor:pointer;padding:8px;
+  }
+  .hamburger span{width:22px;height:2px;background:var(--ink);display:block;border-radius:2px;transition:.2s;}
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    gap:2px;
+    background:var(--bg-card);
+    border-top:1px solid var(--line);
+    padding:8px 24px 20px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{
+    padding:14px 4px;border-bottom:1px solid var(--line);
+    font-size:15px;font-weight:500;
+  }
+  .mobile-menu .btn{margin-top:14px;width:100%;}
+
+  @media(min-width:900px){
+    .nav-links{display:flex;}
+    .nav-cta{display:inline-flex;}
+    .hamburger{display:none;}
+  }
+
+  /* HERO */
+  .hero{
+    padding:64px 0 70px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    gap:52px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(34px,5.6vw,58px);
+    line-height:1.08;
+    max-width:14ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--accent);
+  }
+  .hero-sub{
+    margin-top:22px;
+    font-size:17.5px;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-microlist{
+    margin-top:28px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 22px;
+  }
+  .hero-microlist li{
+    list-style:none;
+    display:flex;align-items:center;gap:8px;
+    font-size:14px;font-weight:500;color:var(--ink-soft);
+  }
+  .hero-microlist li::before{
+    content:"";
+    width:16px;height:16px;flex:none;
+    background:var(--accent-tint);
+    border-radius:50%;
+    position:relative;
+  }
+  .hero-microlist li::after{
+    content:"";
+    position:absolute;
+    width:6px;height:6px;
+    /* placeholder unused */
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;}
+  .hero-visual{
+    position:relative;
+    min-height:340px;
+  }
+  .path-svg{width:100%;height:auto;}
+  .path-node-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    font-weight:600;
+    fill:var(--ink-soft);
+  }
+
+  @media(min-width:900px){
+    .hero-grid{grid-template-columns:1.1fr 0.9fr;}
+  }
+
+  /* PROBLEMA */
+  .problema{background:var(--bg-alt);}
+  .problema h2{font-size:clamp(26px,3.6vw,38px);max-width:16ch;}
+  .problema-body{margin-top:20px;max-width:58ch;font-size:16.5px;color:var(--ink-soft);}
+  .problema-body p + p{margin-top:14px;}
+  .identifica{
+    margin-top:44px;
+    display:grid;
+    gap:16px;
+  }
+  @media(min-width:760px){.identifica{grid-template-columns:repeat(3,1fr);}}
+  .identifica-item{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:22px 22px 24px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    position:relative;
+    padding-left:26px;
+  }
+  .identifica-item::before{
+    content:"";
+    position:absolute;left:22px;top:24px;
+    width:8px;height:8px;border-radius:2px;
+    background:var(--warm);
+  }
+  .identifica-item{padding-left:44px;}
+
+  /* PROPUESTA */
+  .propuesta h2{font-size:clamp(26px,3.6vw,38px);max-width:18ch;}
+  .propuesta-body{margin-top:20px;max-width:60ch;font-size:16.5px;color:var(--ink-soft);}
+  .propuesta-callout{
+    margin-top:32px;
+    display:inline-block;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:19px;
+    padding:16px 22px;
+    border-left:3px solid var(--accent);
+    background:var(--accent-tint);
+    border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  /* HABILIDADES */
+  .habilidades{background:var(--bg-alt);position:relative;}
+  .hab-head{max-width:60ch;}
+  .hab-head h2{font-size:clamp(26px,3.6vw,38px);}
+  .hab-head p{margin-top:16px;color:var(--ink-soft);font-size:16.5px;}
+  .hab-path-wrap{margin:48px 0 8px;overflow:visible;}
+  .hab-grid{
+    margin-top:20px;
+    display:grid;
+    gap:20px;
+  }
+  @media(min-width:700px){.hab-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1080px){.hab-grid{grid-template-columns:repeat(3,1fr);}}
+  .hab-card{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:28px 26px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .hab-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent;}
+  .hab-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;font-weight:600;
+    color:var(--accent);
+    display:flex;align-items:center;gap:10px;
+  }
+  .hab-num .dot{width:34px;height:34px;border-radius:50%;background:var(--accent-tint);display:flex;align-items:center;justify-content:center;color:var(--accent-dark);flex:none;}
+  .hab-card h3{font-size:19px;line-height:1.25;}
+  .hab-card .hab-desc{font-size:14.5px;color:var(--ink-soft);}
+  .hab-card .hab-para{
+    font-size:13px;color:var(--ink-faint);
+    padding-top:12px;border-top:1px dashed var(--line);
+  }
+  .hab-card .hab-cta{
+    margin-top:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;font-weight:600;
+    color:var(--accent-dark);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .hab-card .hab-cta svg{width:14px;height:14px;}
+
+  /* COMO FUNCIONA */
+  .funciona h2{font-size:clamp(26px,3.6vw,38px);max-width:20ch;}
+  .funciona > .wrap > p{margin-top:16px;color:var(--ink-soft);font-size:16.5px;max-width:56ch;}
+  .steps{
+    margin-top:48px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  .step{
+    display:grid;
+    grid-template-columns:44px 1fr;
+    gap:20px;
+    position:relative;
+    padding-bottom:38px;
+  }
+  .step:last-child{padding-bottom:0;}
+  .step-num{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;
+    position:relative;z-index:2;
+    flex:none;
+  }
+  .step:nth-child(odd) .step-num{background:var(--accent);}
+  .step::before{
+    content:"";
+    position:absolute;left:22px;top:44px;bottom:-38px;
+    width:2px;background:var(--line);
+    z-index:1;
+  }
+  .step:last-child::before{display:none;}
+  .step-body h3{font-size:17.5px;margin-bottom:6px;}
+  .step-body p{font-size:14.5px;color:var(--ink-soft);}
+  @media(min-width:760px){
+    .steps{flex-direction:row;gap:0;}
+    .step{grid-template-columns:1fr;text-align:left;padding:0 18px 0 0;flex:1;}
+    .step::before{left:22px;top:44px;right:-18px;bottom:auto;width:auto;height:2px;left:44px;}
+    .step:last-child::before{display:none;}
+  }
+
+  /* MODALIDADES */
+  .modalidades{background:var(--bg-alt);}
+  .modalidades h2{font-size:clamp(26px,3.6vw,38px);max-width:18ch;}
+  .modalidades > .wrap > p{margin-top:16px;color:var(--ink-soft);font-size:16.5px;max-width:52ch;}
+  .plan-grid{
+    margin-top:44px;
+    display:grid;
+    gap:24px;
+  }
+  @media(min-width:820px){.plan-grid{grid-template-columns:1fr 1fr;}}
+  .plan{
+    background:var(--bg-card);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:34px 30px;
+    display:flex;flex-direction:column;gap:18px;
+    position:relative;
+  }
+  .plan.featured{
+    border-color:var(--accent);
+    box-shadow:var(--shadow);
+  }
+  .plan-badge{
+    position:absolute;top:-13px;right:28px;
+    background:var(--accent);color:#fff;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;font-weight:600;letter-spacing:0.06em;
+    padding:6px 14px;border-radius:999px;
+    text-transform:uppercase;
+  }
+  .plan h3{font-size:20px;}
+  .plan .duration{font-size:13.5px;color:var(--ink-faint);font-family:'IBM Plex Mono',monospace;}
+  .plan .price{font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:700;}
+  .plan .price sup{font-size:16px;font-weight:600;color:var(--ink-faint);}
+  .plan ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:11px;}
+  .plan li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);}
+  .plan li svg{width:16px;height:16px;flex:none;margin-top:2px;color:var(--accent);}
+  .plan .btn{margin-top:10px;}
+
+  /* NO SOLO */
+  .acompana{
+    display:grid;gap:44px;
+  }
+  @media(min-width:900px){.acompana{grid-template-columns:1fr 1fr;align-items:start;}}
+  .acompana h2{font-size:clamp(26px,3.6vw,38px);max-width:16ch;}
+  .acompana-body{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:50ch;}
+  .acompana-body p+p{margin-top:12px;}
+  .preguntas-box{
+    background:var(--ink);
+    color:#F3F4EF;
+    border-radius:var(--radius-lg);
+    padding:32px 28px;
+  }
+  .preguntas-box .eyebrow{color:#8FD6C9;}
+  .preguntas-box .eyebrow::before{background:#8FD6C9;}
+  .preguntas-box ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  .preguntas-box li{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:15.5px;font-weight:500;
+    background:rgba(255,255,255,0.06);
+    padding:13px 16px;border-radius:var(--radius-sm);
+  }
+
+  /* SOBRE MI */
+  .sobremi{background:var(--bg-alt);}
+  .sobremi-grid{display:grid;gap:40px;align-items:center;}
+  @media(min-width:880px){.sobremi-grid{grid-template-columns:0.75fr 1.25fr;}}
+  .foto-placeholder{
+    aspect-ratio:4/5;
+    background:repeating-linear-gradient(135deg, var(--bg-card), var(--bg-card) 10px, #E5E7DF 10px, #E5E7DF 20px);
+    border:1.5px dashed var(--ink-faint);
+    border-radius:var(--radius-lg);
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:24px;
+  }
+  .foto-placeholder span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;font-weight:600;
+    color:var(--ink-faint);letter-spacing:0.04em;
+  }
+  .sobremi h2{font-size:clamp(26px,3.6vw,36px);}
+  .sobremi-body{margin-top:18px;font-size:16.5px;color:var(--ink-soft);max-width:56ch;}
+  .sobremi-body p+p{margin-top:14px;}
+
+  /* PARA QUIEN */
+  .paraquien-grid{
+    margin-top:44px;
+    display:grid;gap:20px;
+  }
+  @media(min-width:800px){.paraquien-grid{grid-template-columns:1fr 1fr;}}
+  .pq-card{
+    border-radius:var(--radius-lg);
+    padding:30px 28px;
+  }
+  .pq-si{background:var(--accent-tint);}
+  .pq-no{background:var(--warm-tint);}
+  .pq-card h3{font-size:18px;margin-bottom:16px;}
+  .pq-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .pq-card li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);}
+  .pq-card li svg{width:16px;height:16px;flex:none;margin-top:2px;}
+  .pq-si li svg{color:var(--accent-dark);}
+  .pq-no li svg{color:var(--warm);}
+
+  /* FAQ */
+  .faq{background:var(--bg-alt);}
+  .faq h2{font-size:clamp(26px,3.6vw,38px);}
+  .faq-list{margin-top:36px;display:flex;flex-direction:column;gap:12px;max-width:760px;}
+  details{
+    background:var(--bg-card);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:4px 22px;
+  }
+  summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:18px 0;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;font-size:15.5px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{
+    content:"+";
+    font-size:22px;font-weight:400;color:var(--accent);
+    flex:none;
+    transition:transform .2s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{padding:0 0 20px;font-size:14.5px;color:var(--ink-soft);max-width:64ch;}
+
+  /* CTA FINAL */
+  .cta-final{
+    background:var(--ink);
+    color:#F3F4EF;
+    text-align:center;
+    border-radius:var(--radius-lg);
+    margin:0 24px;
+    padding:64px 28px;
+  }
+  .cta-final-inner{max-width:640px;margin:0 auto;}
+  .cta-final h2{
+    color:#fff;
+    font-size:clamp(26px,4vw,38px);
+    line-height:1.18;
+  }
+  .cta-final p{margin-top:18px;color:#B7C0BC;font-size:16px;}
+  .cta-final .btn{margin-top:30px;}
+  .cta-final .btn-primary{background:var(--accent);}
+
+  /* FOOTER */
+  footer{padding:48px 0 40px;}
+  .footer-grid{
+    display:flex;flex-direction:column;gap:18px;
+    font-size:13.5px;color:var(--ink-faint);
+    border-top:1px solid var(--line);
+    padding-top:28px;
+  }
+  @media(min-width:700px){.footer-grid{flex-direction:row;justify-content:space-between;align-items:center;}}
+  .footer-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink-soft);font-size:14.5px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important; scroll-behavior:auto !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="logo">VIVIR ONLINE<span>A LOS 50</span></a>
+    <div class="nav-links">
+      <a href="#problema">El problema</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#funciona">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <a href="WHATSAPP_LINK_AQUI" class="btn btn-primary nav-cta">Quiero empezar</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#problema">El problema</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#funciona">Cómo funciona</a>
+    <a href="#precios">Precios</a>
+    <a href="#faq">Preguntas</a>
+    <a href="WHATSAPP_LINK_AQUI" class="btn btn-primary">Quiero empezar</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Para mayores de 35 años</p>
+        <h1>No necesitás saberlo todo.<br>Necesitás empezar <em>por algo</em>.</h1>
+        <p class="hero-sub">Tengo 50 años y desde 2023 vivo de Internet. Te enseño una habilidad digital concreta de forma práctica y, si lo necesitás, te acompaño 60 días para que puedas llevarla a la práctica.</p>
+        <ul class="hero-microlist">
+          <li>Elegís entre 5 habilidades digitales</li>
+          <li>No hace falta experiencia previa</li>
+          <li>Capacitación individual, uno a uno</li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="WHATSAPP_LINK_AQUI" class="btn btn-primary">Quiero saber más</a>
+          <a href="#habilidades" class="btn btn-ghost">Ver las 5 habilidades</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="path-svg" viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 40 C 160 40, 60 130, 180 140 C 300 150, 220 230, 330 240 C 380 245, 370 300, 340 330" fill="none" stroke="#DBDED4" stroke-width="2.5" stroke-dasharray="1 10" stroke-linecap="round"/>
+          <path d="M40 40 C 160 40, 60 130, 180 140" fill="none" stroke="#0F6E63" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="40" r="9" fill="#0F6E63"/>
+          <text x="58" y="45" class="path-node-label">Meta Ads</text>
+          <circle cx="180" cy="140" r="9" fill="#B9702E"/>
+          <text x="198" y="145" class="path-node-label">Google Business</text>
+          <circle cx="330" cy="240" r="9" fill="#0F6E63"/>
+          <text x="270" y="225" class="path-node-label">Redes sociales</text>
+          <circle cx="120" cy="260" r="6" fill="#DBDED4"/>
+          <text x="80" y="285" class="path-node-label">Español online</text>
+          <circle cx="250" cy="80" r="6" fill="#DBDED4"/>
+          <text x="200" y="65" class="path-node-label">Páginas web</text>
+          <circle cx="340" cy="330" r="12" fill="#12191C"/>
+          <text x="290" y="358" class="path-node-label" style="font-size:11px;fill:#12191C;font-weight:700;">TU CAMINO</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section class="problema" id="problema">
+    <div class="wrap">
+      <p class="eyebrow">El problema</p>
+      <h2>Tener ganas no alcanza si no sabés por dónde arrancar</h2>
+      <div class="problema-body">
+        <p>Quizás hace tiempo pensás que te gustaría trabajar por Internet, pero no sabés qué aprender ni cómo empezar.</p>
+        <p>Hay cientos de cursos, herramientas y promesas dando vueltas. Muchas veces el problema no es la falta de ganas: es no tener claro cuál es el primer paso.</p>
+      </div>
+      <div class="identifica">
+        <div class="identifica-item">Buscaste información en distintos lugares y terminaste con más pestañas abiertas que respuestas.</div>
+        <div class="identifica-item">Tenés experiencia de trabajo, pero no sabés cómo trasladarla al mundo digital.</div>
+        <div class="identifica-item">Sentís que ya pasó el momento de arrancar algo nuevo, aunque en el fondo no creas que sea así.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPUESTA -->
+  <section class="propuesta" id="propuesta">
+    <div class="wrap">
+      <p class="eyebrow">La propuesta</p>
+      <h2>No necesitás aprender todo. Podés empezar por una sola habilidad.</h2>
+      <p class="propuesta-body">En vez de intentar abarcarlo todo, te propongo elegir un camino concreto: una habilidad digital que puedas aprender, practicar y —si funciona para vos— convertir en una actividad propia. Existen cinco caminos posibles. Vos elegís cuál explorar primero.</p>
+      <div class="propuesta-callout">Aprender → Practicar → Consultar → Avanzar</div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section class="habilidades" id="habilidades">
+    <div class="wrap">
+      <div class="hab-head">
+        <p class="eyebrow">Cinco caminos posibles</p>
+        <h2>Elegí la habilidad que más te interpela</h2>
+        <p>No son carreras ni capacitaciones certificadas. Son habilidades prácticas para aprender, probar y explorar como una posible actividad online.</p>
+      </div>
+
+      <div class="hab-grid">
+
+        <div class="hab-card">
+          <div class="hab-num"><span class="dot">01</span> Publicidad</div>
+          <h3>Publicidad en Meta Ads</h3>
+          <p class="hab-desc">Aprendé a crear y gestionar campañas publicitarias en Facebook e Instagram para negocios, emprendimientos o proyectos propios.</p>
+          <p class="hab-para">Para quien tiene perfil analítico y le interesa entender cómo funciona la publicidad online.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta">Quiero saber más
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hab-card">
+          <div class="hab-num"><span class="dot">02</span> Presencia local</div>
+          <h3>Google Business / Perfil de Empresa</h3>
+          <p class="hab-desc">Aprendé a ayudar a negocios y profesionales a mejorar y gestionar su presencia en Google, especialmente su Perfil de Empresa.</p>
+          <p class="hab-para">Para quien quiere trabajar con comercios y negocios locales que necesitan visibilidad.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta">Quiero saber más
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hab-card">
+          <div class="hab-num"><span class="dot">03</span> Idioma</div>
+          <h3>Enseñar español online a extranjeros</h3>
+          <p class="hab-desc">Aprendé cómo aprovechar tu conocimiento del español para ofrecer clases online a personas de otros países.</p>
+          <p class="hab-para">Para quien disfruta enseñar, conversar y tiene paciencia para acompañar a otra persona.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta">Quiero saber más
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hab-card">
+          <div class="hab-num"><span class="dot">04</span> Contenido</div>
+          <h3>Gestión de redes sociales y contenido</h3>
+          <p class="hab-desc">Aprendé a gestionar redes sociales para negocios y profesionales, organizar contenidos y mantener una presencia activa y prolija.</p>
+          <p class="hab-para">Para quien tiene ojo para lo visual y le gusta organizar y planificar.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta">Quiero saber más
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hab-card">
+          <div class="hab-num"><span class="dot">05</span> Desarrollo</div>
+          <h3>Diseño y creación de páginas web</h3>
+          <p class="hab-desc">Aprendé a crear páginas web para negocios, profesionales y emprendimientos, usando herramientas accesibles y prácticas.</p>
+          <p class="hab-para">Para quien tiene curiosidad técnica y le atrae construir cosas concretas.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta">Quiero saber más
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="hab-card" style="background:var(--ink);border-color:var(--ink);">
+          <h3 style="color:#fff;">¿No sabés cuál elegir?</h3>
+          <p class="hab-desc" style="color:#B7C0BC;">Está bien no tenerlo claro todavía. Podemos conversarlo juntos antes de que decidas por cuál empezar.</p>
+          <a href="WHATSAPP_LINK_AQUI" class="hab-cta" style="color:#8FD6C9;">Hablemos por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="funciona" id="funciona">
+    <div class="wrap">
+      <p class="eyebrow">¿Cómo funciona?</p>
+      <h2>Un proceso simple, pensado para avanzar de verdad</h2>
+      <p>Cinco pasos, del primer contacto a poner en práctica lo aprendido.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body"><h3>Elegís una habilidad</h3><p>De las cinco opciones, o conversamos juntos cuál tiene más sentido para vos.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body"><h3>Coordinamos la capacitación</h3><p>Definimos día y horario para la sesión individual, sin apuro.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body"><h3>Capacitación de 2 horas</h3><p>Sesión 1 a 1, práctica, con espacio para tus preguntas.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body"><h3>Empezás a practicar</h3><p>Aplicás lo aprendido a tu propio ritmo, en tu contexto real.</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-body"><h3>Te acompaño 60 días</h3><p>Si elegiste esa opción, me consultás tus dudas y vamos avanzando juntos.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALIDADES -->
+  <section class="modalidades" id="precios">
+    <div class="wrap">
+      <p class="eyebrow">Dos formas de empezar</p>
+      <h2>Elegí la modalidad que mejor te queda</h2>
+      <p>Las dos incluyen la capacitación individual. La diferencia está en el acompañamiento posterior.</p>
+
+      <div class="plan-grid">
+        <div class="plan">
+          <h3>Capacitación</h3>
+          <p class="duration">2 horas · sesión individual</p>
+          <p class="price"><sup>$</sup>160.000</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Capacitación individual de 2 horas</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Explicación práctica de la habilidad elegida</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Conceptos fundamentales y herramientas para empezar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Orientación sobre cómo aplicar lo aprendido</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Espacio para preguntas durante la sesión</li>
+          </ul>
+          <a href="WHATSAPP_LINK_AQUI" class="btn btn-ghost">Quiero esta opción</a>
+        </div>
+
+        <div class="plan featured">
+          <span class="plan-badge">La más completa</span>
+          <h3>Capacitación + Acompañamiento</h3>
+          <p class="duration">2 horas + 60 días de acompañamiento</p>
+          <p class="price"><sup>$</sup>260.000</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Todo lo incluido en la capacitación</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> 60 días de acompañamiento por WhatsApp</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Respuestas a las dudas que vayan surgiendo</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Orientación paso a paso durante el proceso</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Ayuda para destrabar problemas y decidir</li>
+          </ul>
+          <a href="WHATSAPP_LINK_AQUI" class="btn btn-primary">Quiero esta opción</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NO TENES QUE HACERLO SOLO -->
+  <section class="notesolo">
+    <div class="wrap acompana">
+      <div>
+        <p class="eyebrow">No tenés que hacerlo solo</p>
+        <h2>Lo difícil casi nunca es aprender. Es empezar a hacerlo.</h2>
+        <div class="acompana-body">
+          <p>Por eso, si elegís la opción con acompañamiento, durante 60 días voy a estar disponible para ayudarte a avanzar.</p>
+          <p>No es simplemente "soporte por WhatsApp". Es poder contarme qué estás haciendo, mostrarme en qué estás trabado y recibir una orientación concreta para seguir.</p>
+        </div>
+      </div>
+      <div class="preguntas-box">
+        <p class="eyebrow">Algunas de las dudas que solemos resolver</p>
+        <ul>
+          <li>"¿Cómo hago esto?"</li>
+          <li>"¿Qué debería hacer primero?"</li>
+          <li>"¿Está bien lo que estoy haciendo?"</li>
+          <li>"¿Cómo consigo mis primeros clientes?"</li>
+          <li>"¿Qué herramienta me conviene usar?"</li>
+          <li>"Me trabé con esto, ¿cómo lo soluciono?"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="sobremi">
+    <div class="wrap sobremi-grid">
+      <div class="foto-placeholder">
+        <span>CRISTIAN_FOTO_AQUI</span>
+      </div>
+      <div>
+        <p class="eyebrow">Sobre mí</p>
+        <h2>Soy Cristian. Tengo 50 años y desde 2023 vivo de Internet.</h2>
+        <div class="sobremi-body">
+          <p>Yo también tuve que aprender, probar, equivocarme y encontrar qué funcionaba para mí. No arranqué con un plan perfecto: fui armando mi camino a medida que avanzaba.</p>
+          <p>No tengo una fórmula mágica para ofrecerte. Tengo experiencia práctica, y las ganas de compartir parte de ese camino con quienes están buscando una nueva posibilidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIEN -->
+  <section class="paraquien">
+    <div class="wrap">
+      <p class="eyebrow">¿Es para vos?</p>
+      <h2>Antes de escribirme, revisá esto</h2>
+      <div class="paraquien-grid">
+        <div class="pq-card pq-si">
+          <h3>Es para vos si...</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Querés aprender una habilidad digital concreta</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Querés empezar a trabajar por Internet</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Buscás generar una actividad independiente</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Estás dispuesto a aprender y practicar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Querés tener orientación durante el proceso</li>
+          </ul>
+        </div>
+        <div class="pq-card pq-no">
+          <h3>No es para vos si...</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 18L18 6M6 6l12 12"/></svg> Buscás ganar dinero rápido sin aprender nada</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 18L18 6M6 6l12 12"/></svg> Esperás resultados garantizados</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 18L18 6M6 6l12 12"/></svg> No querés dedicarle tiempo a practicar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 18L18 6M6 6l12 12"/></svg> Buscás una fórmula mágica</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Antes de escribirme</h2>
+      <div class="faq-list">
+        <details>
+          <summary>¿Necesito conocimientos previos?</summary>
+          <p>No. Las capacitaciones están pensadas para arrancar desde cero en la habilidad elegida.</p>
+        </details>
+        <details>
+          <summary>¿Cuál de las cinco habilidades debería elegir?</summary>
+          <p>Depende de tus intereses y de tu experiencia previa. Si no lo tenés claro, podemos conversarlo antes de decidir.</p>
+        </details>
+        <details>
+          <summary>¿La capacitación es individual?</summary>
+          <p>Sí, es una sesión uno a uno, adaptada a tu situación y tus preguntas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto dura?</summary>
+          <p>La capacitación dura 2 horas. Si elegís la opción con acompañamiento, se suman 60 días de seguimiento.</p>
+        </details>
+        <details>
+          <summary>¿Cómo funciona el acompañamiento?</summary>
+          <p>Durante 60 días podés escribirme por WhatsApp para contarme cómo vas, resolver dudas y recibir orientación sobre los próximos pasos.</p>
+        </details>
+        <details>
+          <summary>¿El acompañamiento es solo por WhatsApp?</summary>
+          <p>Es el canal principal de comunicación, pero la idea es un seguimiento real: no te dejo solo después de las dos horas.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa después de las dos horas?</summary>
+          <p>Si elegiste solo la capacitación, quedás con las bases y herramientas para seguir por tu cuenta. Si elegiste el acompañamiento, seguimos en contacto 60 días.</p>
+        </details>
+        <details>
+          <summary>¿Puedo hacer preguntas durante los 60 días?</summary>
+          <p>Sí, para eso está pensado el acompañamiento: que puedas consultarme a medida que vas practicando.</p>
+        </details>
+        <details>
+          <summary>¿La capacitación garantiza que voy a conseguir clientes?</summary>
+          <p>No. Te doy las herramientas, el conocimiento y el acompañamiento para avanzar, pero no puedo garantizar resultados económicos.</p>
+        </details>
+        <details>
+          <summary>¿Puedo elegir otra habilidad más adelante?</summary>
+          <p>Sí, podés empezar por una y más adelante explorar otra si te interesa.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="padding-bottom:100px;">
+    <div class="cta-final">
+      <div class="cta-final-inner">
+        <h2>Quizás no necesitás empezar de cero.</h2>
+        <p>Quizás necesitás encontrar algo que puedas aprender, practicar y convertir en una nueva posibilidad. Elegí una habilidad y empezá a construir tu camino online.</p>
+        <a href="WHATSAPP_LINK_AQUI" class="btn btn-primary">Quiero dar el primer paso</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <span class="footer-logo">Vivir Online a los 50</span>
+    <span>Cristian · Capacitación práctica en habilidades digitales</span>
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById('hamburgerBtn');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
