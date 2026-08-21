@@ -372,7 +372,8 @@
     display:grid;
     gap:24px;
   }
-  @media(min-width:820px){.plan-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:700px){.plan-grid{grid-template-columns:1fr 1fr;}}
+  @media(min-width:1020px){.plan-grid{grid-template-columns:repeat(3,1fr);}}
   .precio-nota{
     margin-top:24px;
     font-size:13.5px;
@@ -710,11 +711,26 @@
   <!-- MODALIDADES -->
   <section class="modalidades" id="precios">
     <div class="wrap">
-      <p class="eyebrow">Dos formas de empezar</p>
+      <p class="eyebrow">Tres formas de empezar</p>
       <h2>Elegí la modalidad que mejor te queda</h2>
-      <p>Las dos incluyen la capacitación individual. La diferencia está en el acompañamiento posterior.</p>
+      <p>Desde una orientación inicial hasta la capacitación con acompañamiento completo. Elegí el punto de partida que mejor se ajusta a dónde estás hoy.</p>
 
       <div class="plan-grid">
+        <div class="plan">
+          <h3>Asesoría General</h3>
+          <p class="duration">1 hora · sesión individual</p>
+          <p class="price"><sup>$</sup>65.000</p>
+          <p class="price-alt">No residentes en Argentina: U$S 50</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Diagnóstico de tu situación actual y tus objetivos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Orientación para elegir por dónde empezar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Sugerencias sobre qué modelo de negocio digital se ajusta a tu perfil</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Recomendaciones concretas de próximos pasos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Espacio para resolver tus dudas iniciales</li>
+          </ul>
+          <a href="https://wa.me/5493385462953?text=Cristian%2C%20voy%20a%20optar%20por%20la%20opci%C3%B3n%20de%20Asesor%C3%ADa%20General%20cuyo%20valor%20es%20%2465.000." class="btn btn-ghost">Quiero esta opción</a>
+        </div>
+
         <div class="plan">
           <h3>Capacitación</h3>
           <p class="duration">2 horas · sesión individual</p>
